@@ -1,8 +1,8 @@
-# RoboReflex
+# Jev + VLA
 
-**A recovery layer for robot policies: detect failures, retry skills, and replan when needed.**
+**Combine Jev decisions with vision-language-action robot policies.**
 
-RoboReflex will supervise an existing vision-language-action policy at action boundaries. It will use structured observations and recent execution feedback to choose whether to continue, observe again, call an available recovery skill, or request a new plan. Jev is the first intended semantic backend.
+The first integration will supervise an existing vision-language-action policy at action boundaries: detect failures, retry available skills, and replan when needed. It will use structured observations and recent execution feedback to choose the next step. Jev is the first intended semantic backend.
 
 **Status: design-stage project.** This repository publishes the proposed interface, scope, and evaluation plan. There is no working Jev adapter, VLA integration, simulator run, or measured recovery result yet. The example is an authored fixture.
 
@@ -10,7 +10,7 @@ RoboReflex will supervise an existing vision-language-action policy at action bo
 
 Run the same policy with the same disturbance in two matched episodes. Move the target or interrupt a grasp. Compare whether the original policy and the supervised policy complete the task, how long they take, and how often the supervisor intervenes unnecessarily.
 
-The first milestone covers three failure families: empty grasp, object slip, and target relocation. Recovery skills must be supplied by the host integration; RoboReflex does not generate continuous joint commands.
+The first milestone covers three failure families: empty grasp, object slip, and target relocation. Recovery skills must be supplied by the host integration; Jev does not generate continuous joint commands.
 
 ## Proposed interface
 
@@ -42,7 +42,7 @@ Choice confidence is not the probability that an action will succeed. End-to-end
 
 ## 中文说明
 
-RoboReflex 的目标是给已有 VLA 增加失败识别与恢复接口。首版聚焦抓空、滑落、目标移动三个问题，由语义判断选择继续、重新观察、调用已有恢复技能或请求重新规划。
+Jev + VLA：将 Jev 的结构化决策与视觉语言动作模型结合。首版给已有 VLA 增加失败识别与恢复接口，聚焦抓空、滑落、目标移动三个问题，由语义判断选择继续、重新观察、调用已有恢复技能或请求重新规划。
 
 当前为设计阶段，尚无真实模型接入和仿真评测。计划先验证一个策略、一个环境，再检查能否复用到第二个策略。不会把手工编写的示例当成实验结果。
 
