@@ -1,0 +1,14 @@
+{
+  "contract_version": "0.1-design",
+  "provenance": "authored illustrative fixture; not a robot recording",
+  "task": "Place the block in the tray",
+  "observation_id": "illustrative-0001",
+  "observation_source": "structured_simulator_state",
+  "current_skill": "lift",
+  "feedback": {
+    "gripper_contact": "lost",
+    "object_state": "resting on the table",
+    "task_state": "not complete"
+  },
+  "available_decisions": ["continue", "observe", "retry_grasp", "replan", "defer"]
+}
